@@ -15,8 +15,8 @@ import { Favorite, FavoriteBorder, MoreVert, Share } from "@mui/icons-material";
 
 const Post = () => {
   return (
-    <div>
-      <Card>
+    <div> 
+      <Card sx={{margin:5}}>
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
@@ -28,8 +28,8 @@ const Post = () => {
               <MoreVert />
             </IconButton>
           }
-          title="Shrimp and Chorizo Paella"
-          subheader="September 14, 2016"
+          title="F1 and Insights"
+          subheader="May 21, 2022"
         />
         <CardMedia
           component="img"
@@ -39,9 +39,11 @@ const Post = () => {
         />
         <CardContent>
           <Typography variant="body2" color="text.secondary">
-            This impressive paella is a perfect party dish and a fun meal to
-            cook together with your guests. Add 1 cup of frozen peas along with
-            the mussels, if you like.
+            Mclaren has yet to improve on their aerodynamics after a bad result
+            seen at Imola this weekend. Joe Brown, McLaren Racing CEO reported
+            that the FIA was against their latest improvement which he is
+            confident will help improve their perfomance hence appearing in the
+            mid field.
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
