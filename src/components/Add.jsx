@@ -1,16 +1,22 @@
-import { Box, Fab, Modal } from "@mui/material";
+import { Avatar, Box, Fab, Modal, Stack, TextField, Typography } from "@mui/material";
 import Tooltip from "@mui/material/Tooltip";
-import { Add as AddIcon } from "@mui/icons-material";
+import { Add as AddIcon, EmojiEmotions, Image, PersonAdd, VideoCameraBack } from "@mui/icons-material";
 import { useState } from "react";
 import { styled } from "@mui/system";
 
-
 const StyledModal = styled(Modal)({
-    display:"flex",
-    alignItems: "center",
-    justifyContent: "center",
-})
- 
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+});
+
+const UserBox = styled(Box)({
+  display: "flex",
+  alignItems: "center",
+  gap:"10px",
+  marginBottom: "10px",
+});
+
 const Add = () => {
   const [open, setOpen] = useState(false);
   return (
@@ -35,7 +41,29 @@ const Add = () => {
         aria-describedby="modal-modal-description"
       >
         <Box width={400} height={280} bgcolor="whitesmoke" p={3}>
-          Hello
+          <Typography variant="h6" color="gray" textAlign="center">
+            Create Post
+          </Typography>
+          <UserBox>
+            <Avatar src="https://" sx={{ width: 30, height: 30 }} />
+            <Typography fontWeight={500} variant="span">
+              Jane Doe
+            </Typography>
+          </UserBox>
+          <TextField
+          sx={{width: "100%"}}
+          id="standard-multiline-static"
+          multiline
+          rows={4}
+          placeholder="Wos Happening..."
+          variant="standard"
+        />
+        <Stack direction="row" gap={1} mb={3}>
+            <EmojiEmotions color="primary"/>
+            <Image color="primary"/>
+            <VideoCameraBack color="success"/>
+            <PersonAdd color="error"/>
+        </Stack>
         </Box>
       </StyledModal>
     </>
