@@ -1,6 +1,23 @@
-import { Avatar, Box, Fab, Modal, Stack, TextField, Typography } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Button,
+  ButtonGroup,
+  Fab,
+  Modal,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
 import Tooltip from "@mui/material/Tooltip";
-import { Add as AddIcon, EmojiEmotions, Image, PersonAdd, VideoCameraBack } from "@mui/icons-material";
+import {
+  Add as AddIcon,
+  DateRange,
+  EmojiEmotions,
+  Image,
+  PersonAdd,
+  VideoCameraBack,
+} from "@mui/icons-material";
 import { useState } from "react";
 import { styled } from "@mui/system";
 
@@ -13,7 +30,7 @@ const StyledModal = styled(Modal)({
 const UserBox = styled(Box)({
   display: "flex",
   alignItems: "center",
-  gap:"10px",
+  gap: "10px",
   marginBottom: "10px",
 });
 
@@ -40,7 +57,13 @@ const Add = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box width={400} height={280} bgcolor="whitesmoke" p={3}>
+        <Box
+          width={400}
+          height={280}
+          bgcolor="background.default"
+          color={"text.primary"}
+          p={3}
+        >
           <Typography variant="h6" color="gray" textAlign="center">
             Create Post
           </Typography>
@@ -51,19 +74,29 @@ const Add = () => {
             </Typography>
           </UserBox>
           <TextField
-          sx={{width: "100%"}}
-          id="standard-multiline-static"
-          multiline
-          rows={4}
-          placeholder="Wos Happening..."
-          variant="standard"
-        />
-        <Stack direction="row" gap={1} mb={3}>
-            <EmojiEmotions color="primary"/>
-            <Image color="primary"/>
-            <VideoCameraBack color="success"/>
-            <PersonAdd color="error"/>
-        </Stack>
+            sx={{ width: "100%" }}
+            id="standard-multiline-static"
+            multiline
+            rows={4}
+            placeholder="Wos Happening..."
+            variant="standard"
+          />
+          <Stack direction="row" gap={1} mb={3}>
+            <EmojiEmotions color="primary" />
+            <Image color="primary" />
+            <VideoCameraBack color="success" />
+            <PersonAdd color="error" />
+          </Stack>
+          <ButtonGroup
+            fullWidth
+            variant="contained"
+            aria-label="outlined primary button group"
+          >
+            <Button>Post</Button>
+            <Button sx={{ width: "100px" }}>
+              <DateRange />
+            </Button>
+          </ButtonGroup>
         </Box>
       </StyledModal>
     </>
